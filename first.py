@@ -31,18 +31,15 @@ def find_first(symbol):
 
     FIRST[symbol] = first
     return first
-
-# 🔹 Print Grammar
+
 print("Grammar:")
 for non_terminal in grammar:
     for prod in grammar[non_terminal]:
         print(f"{non_terminal} -> {prod}")
-
-# 🔹 Compute FIRST
+
 for non_terminal in grammar:
     find_first(non_terminal)
-
-# 🔹 Print FIRST Sets
+
 print("\nFIRST Sets:")
 for non_terminal in grammar:
     print(f"FIRST({non_terminal}) = {{", ", ".join(FIRST[non_terminal]), "}}")
